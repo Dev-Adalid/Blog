@@ -1,4 +1,13 @@
+<?php
+include_once 'config.php';
+include_once 'Post.php';
 
+$database = new Database();
+$db = $database->getConnection();
+$post = new Post($db);
+
+$posts = $post->readAll();
+?>
 <!DOCTYPE html>
 <html>
 <head>
